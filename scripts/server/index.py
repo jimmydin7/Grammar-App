@@ -6,4 +6,5 @@ class Index:
         def index():
             txt = request.form.get('txt')
 
-            return render_template('index.html', txt='Corrected: ' + txt)
+            if txt != None: txt = 'Corrected: ' + txt
+            return render_template('index.html', txt=txt)
