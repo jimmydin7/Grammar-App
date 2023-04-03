@@ -2,7 +2,13 @@
     <!--
         This is the base.html file. It contains the base styles and elements that will appear on every page.
         Other html files will extend from this base.html file to avoid unnecessary repetition and to enable easier changes.
+        Please see near the top of the #html-design channel for a further explanation.
     -->
-    <head></head>
-    <body></body>
+    <head>
+        <link rel="stylesheet" href='/static/css/style.css' />
+    </head>
+    <body>
+        <p>Cool repeated stuffs..</p>
+        {% block body %}{% endblock %}
+    </body>
 </html>
