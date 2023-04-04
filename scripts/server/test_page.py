@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect # play with redirect
+from flask import render_template, request
 
 class TestPage:
     def test_page(self):
