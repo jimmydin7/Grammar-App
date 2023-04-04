@@ -1,0 +1,45 @@
+/* Some random front-end code that will remain until our front-end devs get to work. */
+.top-bar {
+    float: left;
+    width: 100%;
+}
+
+.user-form {
+    text-align: center;
+    padding: 10px;
+}
+
+.generic-error-popup {
+    background: rgb(204, 68, 68);
+    padding: 10px;
+    width: 50%;
+}
+
+
+.generic-text {
+    color: rgb(197, 255, 255);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.generic-text-medium {
+    font-size: 35px;
+}
+
+.generic-button {
+    background: rgb(85, 110, 155);
+    transition: background 0.3s;
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.generic-button:hover {
+    background: rgb(121, 155, 218)
+}
+
+.invisible-button {
+    padding: 10px;
+    text-decoration: none;
+}
+

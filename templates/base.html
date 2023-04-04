@@ -6,8 +6,15 @@
     -->
     <head>
         <link rel="stylesheet" href='/static/css/style.css' />
+        <link rel="stylesheet" href='/static/css/thbopscode.css' />
     </head>
     <body>
+        <div class="top-bar">
+            <a href="/" class="invisible-button generic-text">Home</a>
+            <a href="/signup" class="invisible-button generic-text">Sign up</a>
+            <a href="/login" class="invisible-button generic-text">Login</a>
+        </div>
+        <br>
         <h1 id="title">Grammar App</h1>
         <h2 id="small_title">The app that was made with love to change the world</h2>
         {% block body %}{% endblock %}

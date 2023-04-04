@@ -4,9 +4,9 @@
 <p id="input_description">Enter the text you want to correct here</p>
 <form id="input_label" action="/" method="POST">
     {% if txt == None %}
-    <input type="text" name="txt" autofocus />
+    <input type="text" name="txt" class="generic-text" autofocus />
     {% else %}
-    <h1>{{ txt }}</h1>
+    <input type="text" name="txt" class="generic-text" value="{{ txt }}" autofocus />
     {% endif %}
     
     

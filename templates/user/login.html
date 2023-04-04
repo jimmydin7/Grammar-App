@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<form id="input_label" action="/loginp" method="POST">
+    <div class="user-form">
+        <p>
+            <label for="username" class="generic-text generic-text-medium">Username: </label>
+            <input type="text" name="username" id="username" class="generic-text" autofocus />
+        </p>
+        <p>
+            <label for="password" class="generic-text generic-text-medium">Password: </label>
+            <input type="password" name="password" id="password" class="generic-text" />
+        </p>
+        {% if error != None %}
+        <div class="generic-error-popup">
+            <span onclick="this.parentElement.style.display='none'" class="generic-button">&times;</span>
+            <p>Please fix this ugly thing</p>
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+        <button type="submit" class="generic-button generic-text generic-text-medium" >Submit</button>
+    </div>
+
+    
+    
+</form>
+{% endblock %}
