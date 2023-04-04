@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<p>Hello World</p>
-<form action="/" method="POST">
+<p id="input_description">Enter the text you want to correct here</p>
+<form id="input_label" action="/" method="POST">
     {% if txt == None %}
     <input type="text" name="txt" autofocus />
     {% else %}
