@@ -6,7 +6,7 @@ class App(BaseApp, Index):
         super().__init__(__name__)
         
         user_handler = Handler()
-        user_handler.migrate()
+        # user_handler.migrate()
 
     
     def pages(self):
