@@ -6,18 +6,18 @@
         Please see near the top of the #html-design channel for a further explanation.
     -->
     <head>
+        {% block head %}{% endblock %}
+        <title>Grammar App</title>
         <link rel="stylesheet" href='/static/css/style.css' />
         <link rel="stylesheet" href='/static/css/thbopscode.css' />
-
-        <title>Grammar App</title>
     </head>
     <body>
         <div class="top-bar">
             <a href="/" class="invisible-button generic-text">Home</a>
+            <a href="/about" class = "invisible-button generic-text">About</a>
             {% if user == None %}
                 <a href="/signup" class="invisible-button generic-text">Sign up</a>
                 <a href="/login" class="invisible-button generic-text">Login</a>
-                <a href="/about" class = "invisible-button generic-text">About</a>
             {% else %}
             {% if user['permission-level'] > 0 %}
                 <a href="/admin/dashboard" class="invisible-button generic-text">Admin</a>

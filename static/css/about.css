@@ -1,31 +1,11 @@
-body {
-    /* Just some dummy code to test if the style sheet is working properly */
-    background: rgb(62, 91, 114);
-    color: rgb(197, 255, 255);
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    align-items: center ;
-
-}
-
-#title{
-    text-align: center;
-    font-size: 60px;
-
-}
-
-#small_title{
-    text-align: center;
-    font-size: 30px;
-}
-
-#description{
+#description {
     text-align: center;
     margin: 100px;
     font-size: 30px;
     color: rgb(108, 210, 228);
 }
 
-#try{
+#try {
     text-align: center;
     margin: 20px;
     font-size: 30px;
@@ -40,4 +20,6 @@ body {
     transform: translate(-50%, -50%);
 
 }
-
+#try:hover {
+    background-color: rgb(185, 235, 235);
+}

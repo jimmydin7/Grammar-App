@@ -3,9 +3,9 @@ from flask import render_template, request, redirect
 
 class Index:
     def index(self):
-        @self.app.route('/about', methods=['GET'])
+        @self.app.route('/about')
         def about():
-            return render_template('user/about.html')
+            return render_template('about.html', user=self.user_handler.get(request.cookies.get('key')))
 
         @self.app.route('/', methods=['GET', 'POST'])
         def index():
