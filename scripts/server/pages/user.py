@@ -19,7 +19,7 @@ class User:
     def login(self):
         @self.app.route('/login')
         def login():
-            return render_template('user/login.html', error=None, user=self.user_handler.get(request.cookies.get('key')))
+            return render_template('user/login.html', error=None, user=self.handler.get(request.cookies.get('key')))
         
         @self.app.route('/login-p', methods=['POST'])
         def loginp():
@@ -31,16 +31,16 @@ class User:
             # If our login details are proper, then let's check for the user in the database
             key = None
             if error == None:
-                auth = self.user_handler.check_login(name, password)
+                auth = self.handler.check_login(name, password)
                 if auth == False:
                     error = 'Authentication failed! Wrong username or password.'
                 else:
                     # Generate a new key for next session
-                    key = self.user_handler.generate_key()
+                    key = self.handler.generate_key()
                     auth['key'] = key
-                    self.user_handler.db.save()
+                    self.handler.db.save()
 
-            res = make_response(render_template('user/login.html', error=error, user=self.user_handler.get(request.cookies.get('key'))))
+            res = make_response(render_template('user/login.html', error=error, user=self.handler.get(request.cookies.get('key'))))
             if key != None:
                 res.set_cookie('key', key, max_age=63072000) # Sets a cookie with the key for 2 years
 
@@ -48,7 +48,7 @@ class User:
     def signup(self):
         @self.app.route('/signup')
         def signup():
-            return render_template('user/signup.html', error=None, user=self.user_handler.get(request.cookies.get('key')))
+            return render_template('user/signup.html', error=None, user=self.handler.get(request.cookies.get('key')))
         
         @self.app.route('/signup-p', methods=['POST'])
         def signupp():
@@ -60,14 +60,14 @@ class User:
             # If our login details are proper, then let's check for the user in the database
             key = None
             if error == None:
-                auth = self.user_handler.add(name, password)
+                auth = self.handler.add(name, password)
                 if not auth:
                     error = f'Account creation failed! The name "{name}" already exists! Please pick a different name.'
                 else:
-                    key = self.user_handler.get_name(name)['key']
+                    key = self.handler.get_name(name)['key']
                     
 
-            res = make_response(render_template('user/signup.html', error=error, user=self.user_handler.get(request.cookies.get('key'))))
+            res = make_response(render_template('user/signup.html', error=error, user=self.handler.get(request.cookies.get('key'))))
             if key != None:
                 res.set_cookie('key', key, max_age=63072000) # Sets a cookie with the key for 2 years
 

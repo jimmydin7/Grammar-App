@@ -1,14 +1,14 @@
 from scripts.server import *
 from scripts.ai import *
-from scripts.server.user.handler import Handler
+from scripts.server.database.handler import Handler
 
 class App(BaseApp, Index, User, Admin):
     def __init__(self):
         super().__init__(__name__)
         
-        self.ai = Ai()
+        self.ai = Ai(self)
 
-        self.user_handler = Handler()
+        self.handler = Handler()
         # self.user_handler.migrate()
 
     def pages(self):
@@ -23,4 +23,4 @@ class App(BaseApp, Index, User, Admin):
 if __name__ == '__main__':
     app = App()
     app.pages()
-    app.run(debug=True)
+    app.run(debug=False)
