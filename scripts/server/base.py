@@ -6,9 +6,6 @@ class BaseApp:
         self.app = Flask(name)
 
     
-    def redirect(self, url):
-        return f'<html><head><meta http-equiv="refresh" content="0; URL={url}"/></head></html>'
-    
     
     def run(self, debug=False):
         if debug:

@@ -1,4 +1,4 @@
-from flask import render_template, request
+from flask import render_template, request, redirect
 
 
 class Index:
@@ -12,11 +12,11 @@ class Index:
                 if key != None and self.user_handler.get(key) != None: # This will be None if the user is not logged in.
                     # This will return the grammaticly changed code, keep in mind that this is not the final module. It is just a demonstration
                     txt = self.ai.parser.parse(txt)['result']
-                    return render_template('index.html', txt=txt)
+                    return render_template('index.html', txt=txt, user=self.user_handler.get(request.cookies.get('key')))
                 else:
-                    return self.redirect('/login')
+                    return redirect('/signup')
             else:
-                return render_template('index.html', txt=txt)
+                return render_template('index.html', txt=txt, user=self.user_handler.get(request.cookies.get('key')))
                 
                     
 

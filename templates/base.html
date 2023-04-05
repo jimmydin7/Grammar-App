@@ -7,12 +7,19 @@
     <head>
         <link rel="stylesheet" href='/static/css/style.css' />
         <link rel="stylesheet" href='/static/css/thbopscode.css' />
+
+        <title>Grammar App</title>
     </head>
     <body>
         <div class="top-bar">
             <a href="/" class="invisible-button generic-text">Home</a>
+            {% if user == None %}
             <a href="/signup" class="invisible-button generic-text">Sign up</a>
             <a href="/login" class="invisible-button generic-text">Login</a>
+            {% else %}
+            <a href="/logout" class="invisible-button generic-text">Logout</a>
+            <text>Hello {{ user['name'] }}!</text>
+            {% endif %}
         </div>
         <br>
         <h1 id="title">Grammar App</h1>

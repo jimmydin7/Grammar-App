@@ -15,6 +15,8 @@ class App(BaseApp, Index, User):
     def pages(self):
         self.index()
         self.login()
+        self.signup()
+        self.logout()
 
 if __name__ == '__main__':
     app = App()
