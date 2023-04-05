@@ -11,7 +11,6 @@ class App(BaseApp, Index, User, Admin):
         self.user_handler = Handler()
         # self.user_handler.migrate()
 
-    
     def pages(self):
         self.index()
 
