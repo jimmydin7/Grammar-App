@@ -2,7 +2,7 @@ from scripts.server import *
 from scripts.ai import *
 from scripts.server.user.handler import Handler
 
-class App(BaseApp, Index, User):
+class App(BaseApp, Index, User, Admin):
     def __init__(self):
         super().__init__(__name__)
         
@@ -14,9 +14,12 @@ class App(BaseApp, Index, User):
     
     def pages(self):
         self.index()
+
         self.login()
         self.signup()
         self.logout()
+
+        self.admin()
 
 if __name__ == '__main__':
     app = App()

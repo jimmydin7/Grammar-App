@@ -1,0 +1,15 @@
+{% extends 'admin/base.html' %}
+
+{% block body %}
+    <p>Users page:</p>
+    <ol>
+        {% for u in users %}
+            <li>
+                <a href="users/{{ u['name'] }}">{{ u['name'] }}</a>
+                {% if u['permission-level'] > 0 %}
+                    *
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+{% endblock %}

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <!--
         This is the base.html file. It contains the base styles and elements that will appear on every page.
@@ -14,11 +15,14 @@
         <div class="top-bar">
             <a href="/" class="invisible-button generic-text">Home</a>
             {% if user == None %}
-            <a href="/signup" class="invisible-button generic-text">Sign up</a>
-            <a href="/login" class="invisible-button generic-text">Login</a>
+                <a href="/signup" class="invisible-button generic-text">Sign up</a>
+                <a href="/login" class="invisible-button generic-text">Login</a>
             {% else %}
-            <a href="/logout" class="invisible-button generic-text">Logout</a>
-            <text>Hello {{ user['name'] }}!</text>
+            {% if user['permission-level'] > 0 %}
+                <a href="/admin/dashboard" class="invisible-button generic-text">Admin</a>
+            {% endif %}
+                <a href="/logout" class="invisible-button generic-text">Logout</a>
+                <text>Hello {{ user['name'] }}!</text>
             {% endif %}
         </div>
         <br>

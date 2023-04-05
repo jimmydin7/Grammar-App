@@ -1,4 +1,4 @@
-from random import choice
+from random import choice, randint
 
 from .db import Database
 
@@ -13,11 +13,11 @@ class Handler:
         }
         self.db = Database('db.json')
     
-    def generate_key(self, length):
-        '''Generates a random key from the given length'''
+    def generate_key(self):
+        '''Generates a random key'''
         chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
         key = ''
-        for i in range(length): key += choice(chars)
+        for i in range(randint(100, 200)): key += choice(chars)
         return key
 
     def get(self, key):
@@ -46,7 +46,7 @@ class Handler:
         if self.get_name(name) == None:
             user = self.default_user.copy()
 
-            user['key'] = self.generate_key(length=16)
+            user['key'] = self.generate_key()
             user['name'] = name
             user['password'] = password
 
@@ -55,6 +55,10 @@ class Handler:
             return True
         else:
             return False
+    
+    def add_raw(self, user):
+        self.db.data['users'].append(user)
+        self.db.save()
     
     def migrate(self):
         '''

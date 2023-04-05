@@ -1,0 +1,11 @@
+{% extends 'admin/base.html' %}
+
+{% block body %}
+    <form action="{{ open_user['name'] }}/update" method="POST">
+        {% for p in open_user %}
+            <p>{{ p }}: <input type="text" name="{{ p }}" value="{{ open_user[p] }}"/></p>
+        {% endfor %}
+        <button type="submit">Update</button>
+        <a href="{{ open_user['name'] }}/remove">Remove</a>
+    </form>
+{% endblock %}

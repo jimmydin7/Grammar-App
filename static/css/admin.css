@@ -1,0 +1,16 @@
+body {
+    background: black;
+    color: white;
+    font-family: Arial;
+}
+a {color: aqua;}
+a:hover {color: azure;}
+button {
+    color: aqua;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    font-family: Arial;
+    font-size: medium;
+}
+button:hover {color: azure;}

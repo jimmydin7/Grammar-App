@@ -36,7 +36,7 @@ class User:
                     error = 'Authentication failed! Wrong username or password.'
                 else:
                     # Generate a new key for next session
-                    key = self.user_handler.generate_key(length=16)
+                    key = self.user_handler.generate_key()
                     auth['key'] = key
                     self.user_handler.db.save()
 
