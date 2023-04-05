@@ -3,6 +3,10 @@ from flask import render_template, request, redirect
 
 class Index:
     def index(self):
+        @self.app.route('/about', methods=['GET'])
+        def about():
+            return render_template('user/about.html')
+
         @self.app.route('/', methods=['GET', 'POST'])
         def index():
             
@@ -17,6 +21,6 @@ class Index:
                     return redirect('/signup')
             else:
                 return render_template('index.html', txt=txt, user=self.user_handler.get(request.cookies.get('key')))
-                
-                    
+
+
 
