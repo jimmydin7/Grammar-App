@@ -1,17 +1,20 @@
 from random import choice, randint
 
 from .db import Database
+from .ai_handler import AiHandler
 
 class Handler:
     def __init__(self):
-        '''Initializes the User Handler and the Database.'''
+        '''Initializes the Handler and the Database.'''
         self.default_user = {
             'key':None,
             'name':None,
             'password':None,
-            'permission-level':0
+            'permission-level':0,
+            'history':[]
         }
         self.db = Database('db.json')
+        self.ai = AiHandler(self)
     
     def generate_key(self):
         '''Generates a random key'''
@@ -75,6 +78,8 @@ class Handler:
 
             new_users.append(new_user)
         self.db.data['users'] = new_users
+
+        self.ai.migrate()
         self.db.save()
     
     def remove(self, key):

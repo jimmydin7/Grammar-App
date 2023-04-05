@@ -9,7 +9,10 @@ class App(BaseApp, Index, User, Admin):
         self.ai = Ai(self)
 
         self.handler = Handler()
-        # self.user_handler.migrate()
+        # self.handler.migrate()
+
+        # self.handler.ai.edit_pair('test-layer', 'test-key', 'cool value')
+
 
     def pages(self):
         self.index()
@@ -23,4 +26,4 @@ class App(BaseApp, Index, User, Admin):
 if __name__ == '__main__':
     app = App()
     app.pages()
-    app.run(debug=False)
+    app.run(debug=True)

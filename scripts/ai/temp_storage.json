@@ -1,0 +1,37 @@
+{
+    "common-misspelled-words": {
+        "its": "it's",
+        "theyr": "their",
+        "thier": "their",
+        "there": "their",
+        "theyre": "they're",
+        "wont": "won't",
+        "cant": "can't",
+        "shouldnt": "shouldn't",
+        "wouldnt": "wouldn't",
+        "couldnt": "couldn't",
+        "didnt": "didn't",
+        "doesnt": "doesn't",
+        "dont": "don't",
+        "youre": "you're",
+        "youll": "you'll",
+        "youd": "you'd",
+        "hes": "he's",
+        "shes": "she's",
+        "weve": "we've",
+        "theyve": "they've",
+        "ive": "I've",
+        "id": "I'd",
+        "i": "I",
+        "thats": "that's",
+        "whats": "what's",
+        "heres": "here's",
+        "theres": "there's"
+    },
+    "short-long-forms": {
+        "ai": "Artificial Intelligence",
+        "chatgpt": "ChatGPT",
+        "google": "Google",
+        "wiki": "Wikipedia"
+    }
+}
