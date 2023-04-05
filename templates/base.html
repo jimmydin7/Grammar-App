@@ -17,6 +17,7 @@
             {% if user == None %}
                 <a href="/signup" class="invisible-button generic-text">Sign up</a>
                 <a href="/login" class="invisible-button generic-text">Login</a>
+                <a href="/about" class = "invisible-button generic-text">About</a>
             {% else %}
             {% if user['permission-level'] > 0 %}
                 <a href="/admin/dashboard" class="invisible-button generic-text">Admin</a>
