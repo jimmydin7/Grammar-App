@@ -2,7 +2,7 @@ from scripts.server import *
 from scripts.ai import *
 from scripts.server.database.handler import Handler
 
-class App(BaseApp, Index, User, Admin):
+class App(BaseApp, Index, Grammar, User, Admin):
     def __init__(self):
         super().__init__(__name__)
         
@@ -11,11 +11,12 @@ class App(BaseApp, Index, User, Admin):
         self.handler = Handler()
         # self.handler.migrate()
 
-        # self.handler.ai.edit_pair('test-layer', 'test-key', 'cool value')
 
 
     def pages(self):
         self.index()
+
+        self.grammar()
 
         self.login()
         self.signup()

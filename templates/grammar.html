@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<p>Enter the text you want to correct here</p>
+<form action="/grammar" method="POST">
+    {% if txt == None %}
+    <input type="text" name="txt" autofocus />
+    {% else %}
+    <input type="text" name="txt" value="{{ txt }}" autofocus />
+    {% endif %}
+    
+    
+    <button style="visibility: hidden;" type="submit"></button> <!--Keep this invisible-->
+</form>
+
+{% endblock %}
