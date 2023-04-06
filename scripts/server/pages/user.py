@@ -40,8 +40,16 @@ class User:
                     auth['key'] = key
                     self.handler.db.save()
 
-            res = make_response(render_template('user/login.html', error=error, user=self.handler.get(request.cookies.get('key'))))
+            res = make_response(
+                render_template(
+                'user/login.html',
+                error=error,
+                user=self.handler.get(request.cookies.get('key'))
+                )
+            )
             if key != None:
+                # Success login
+                res = make_response(redirect('/'))
                 res.set_cookie('key', key, max_age=63072000) # Sets a cookie with the key for 2 years
 
             return res
@@ -69,6 +77,8 @@ class User:
 
             res = make_response(render_template('user/signup.html', error=error, user=self.handler.get(request.cookies.get('key'))))
             if key != None:
+                # Success signup
+                res = make_response(redirect('/'))
                 res.set_cookie('key', key, max_age=63072000) # Sets a cookie with the key for 2 years
 
             return res
