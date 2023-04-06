@@ -8,8 +8,8 @@ to_app.addEventListener("click", function() {
 });
   
 
-support = document.getElementById('support');
+support = document.getElementById('about');
 
 support.addEventListener("click", function() {
-    window.location.href = "/support";
+    window.location.href = "/about";
 });
