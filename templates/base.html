@@ -1,12 +1,6 @@
 <!DOCTYPE html>
-<html>
-    <!--
-        This is the base.html file. It contains the base styles and elements that will appear on every page.
-        Other html files will extend from this base.html file to avoid unnecessary repetition and to enable easier changes.
-        Please see near the top of the #html-design channel for a further explanation.
-    -->
+<!-- <html>
     <head>
-        {% block head %}{% endblock %}
         <title>Grammar App</title>
         <link rel="stylesheet" href='/static/css/style.css' />
         <link rel="stylesheet" href='/static/css/thbopscode.css' />
@@ -29,6 +23,38 @@
         <br>
         <h1 id="title">Grammar App</h1>
         <h2 id="small_title">The app that was made with love to change the world</h2>
-        {% block body %}{% endblock %}
     </body>
-</html>
+</html> -->
+<html>
+<head>
+    {% block head %}{% endblock %}
+    <title>BlackCat</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            
+            <ul>
+                <li><a href="#">Home</a></li>
+                {% if user == None %}
+                    <li><a href="#">Sign up</a></li>
+                    <li><a href="#">Login</a></li>
+                {% else %}
+                    <li>Hello {{ user['name'] }}!</li>
+                    {% if user['permission-level'] > 0 %}
+                        <li><a href="#">Admin</a></li>
+                    {% endif %}
+                    <li><a href="#">Logout</a></li>
+                {% endif %}
+                <li><a href="#">Grammar checker</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <h1>BlackCat</h1>
+        <p>Made with love to change the world</p>
+        {% block body %}{% endblock %}
+    </div>
+</body>
+</html>   
