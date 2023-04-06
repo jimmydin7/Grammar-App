@@ -9,10 +9,18 @@
     padding: 10px;
 }
 
-.generic-error-popup {
-    background: rgb(204, 68, 68);
-    padding: 10px;
-    width: 50%;
+.generic-error-popup{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: #df7c7c;
+  border: 1px solid #5f1b1b;
+  border-radius: 5px;
+  padding: 40px; /* Increase the padding to make the popup bigger */
+  max-width: 600px; /* Set a maximum width to keep the popup from getting too wide */
+  backdrop-filter: blur(40px); /* Add a blur effect to the background */
 }
 
 
@@ -34,12 +42,25 @@
     cursor: pointer;
 }
 
+.error-button{
+    background:#df7c7c;
+    transition: background 0.3s;
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+  
+}
+
+.error-button:hover{
+    background: #5f1b1b;
+}
 .generic-button:hover {
-    background: rgb(121, 155, 218)
+    background: rgb(27, 59, 107)
 }
 
 .invisible-button {
     padding: 10px;
     text-decoration: none;
 }
+
 
