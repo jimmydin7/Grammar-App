@@ -183,6 +183,35 @@
 }
 
 
+/* Grammar */
+
+.input-prompt{
+  color: #00bfff;
+  background-color: #444;
+  border: none;
+  padding: 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  outline: none;
+  width: 500px;
+  height: 400px;
+  resize: none;
+  text-align: center;
+  line-height: 50px;
+}
+
+#title-placeholder {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  color: #00bfff;
+}
+
+
+
+
 @media only screen and (max-width: 600px) {
   .navbar {
     width: 95%;
