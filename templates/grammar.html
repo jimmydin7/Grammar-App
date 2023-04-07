@@ -2,12 +2,12 @@
 
 {% block body %}
 
-<p>Enter the text you want to correct here</p>
+<p id="title-placeholder">Enter the text you want to correct here</p>
 <form action="/grammar" method="POST">
     {% if txt == None %}
-    <input type="text" name="txt" autofocus />
+    <input type="text" name="txt" class = "input-prompt" autofocus />
     {% else %}
-    <input type="text" name="txt" value="{{ txt }}" autofocus />
+    <input type="text" name="txt" class = "input-prompt" value="{{ txt }}" autofocus />
     {% endif %}
     
     
