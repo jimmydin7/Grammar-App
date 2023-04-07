@@ -7,7 +7,7 @@
 {% block body %}
 <form id="input_label" action="/login-p" method="POST">
     <div class="user-form">
-        <h1>Login</h1>
+        <h1>BlackCat - Login</h1>
         <p>
             <label for="username" class="generic-text generic-text-medium">Username: </label>
             <input type="text" name="username" id="username" class="generic-text" autofocus />
@@ -18,8 +18,8 @@
         </p>
         {% if error != None %}
         <div class="generic-error-popup">
-            <span onclick="this.parentElement.style.display='none'" class="generic-button">&times;</span>
-            <p>{{ error }}</p>
+            <span onclick="this.parentElement.style.display='none'" class="error-button">❌</span>
+            <p id = "error-def"><strong>{{ error }}</strong></p>
         </div>
         {% endif %}
         <button type="submit" class="generic-button generic-text generic-text-medium" >Submit</button>
@@ -29,3 +29,4 @@
     
 </form>
 {% endblock %}
+
