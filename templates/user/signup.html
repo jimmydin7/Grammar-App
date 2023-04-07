@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
 {% block head %}
-    <title>BlackCat - Sign up</title>
+    <title>BlackCat - Sign Up</title>
 {% endblock %}
 
 {% block body %}
 <form id="input_label" action="/signup-p" method="POST">
     <div class="user-form">
-        <h1>Sign up</h1>
+        <h1>BlackCat - Sign Up</h1>
         <p>
             <label for="username" class="generic-text generic-text-medium">Username: </label>
             <input type="text" name="username" id="username" class="generic-text" autofocus />
@@ -18,8 +18,8 @@
         </p>
         {% if error != None %}
         <div class="generic-error-popup">
-            <span onclick="this.parentElement.style.display='none'" class="submit-button">&times;</span>
-            <p>{{ error }}</p>
+            <span onclick="this.parentElement.style.display='none'" class="error-button">❌</span>
+            <p id = "error-def"><strong>{{ error }}</strong></p>
         </div>
         {% endif %}
          <button type="submit" class="generic-button generic-text generic-text-medium" >Submit</button>
