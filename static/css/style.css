@@ -183,47 +183,57 @@
 }
 
 
-@media only screen and (max-width: 768px) {
-  /* mobile styles */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    width: 95%;
+    padding: 15px 0;
+  }
+
+  .logo {
+    width: 80px;
+  }
+
+  .navbar ul li {
+    margin: 0 10px;
+  }
+
+  .content h1 {
+    font-size: 50px;
+    margin-top: 50px;
+  }
+
+  .content p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .generic-button {
+    width: 150px;
+    padding: 10px 0;
+    margin: 10px 5px;
+  }
 
   .user-form {
-    max-width: none;
-    width: 90%;
+    padding: 20px;
   }
-}
 
+  .user-form h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
 
-@media only screen and (max-width: 768px) {
-	/* mobile styles */
+  .user-form label {
+    font-size: 14px;
+  }
 
-	.navbar ul {
-	  position: fixed;
-	  top: 0;
-	  left: -100%;
-	  background-color: #111;
-	  height: 100vh;
-	  width: 100%;
-	  text-align: center;
-	  display: flex;
-	  flex-direction: column;
-	  justify-content: center;
-	  align-items: center;
-	  transition: all 0.3s ease-in;
-	}
+  .user-form input[type="text"],
+  .user-form input[type="password"] {
+    font-size: 14px;
+  }
 
-	.navbar ul.show {
-	  left: 0;
-	}
-
-	.navbar ul li {
-	  display: block;
-	  margin: 30px 0;
-	  line-height: 30px;
-	}
-
-	.navbar ul li a {
-	  font-size: 20px;
-	  font-weight: bold;
-	}
-
+  .user-form button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
 }
