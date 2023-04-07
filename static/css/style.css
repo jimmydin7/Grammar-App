@@ -3,6 +3,18 @@
     padding: 0;
     font-family: sans-serif;
 }
+
+#error-def {
+    color: #FF0000;
+
+}
+
+.error-button {
+    background-color: white;
+    color: red;
+    font-size:1.2em;
+    cursor:pointer;
+}
 .banner{
     width: 100%;
     height: 100vh;
@@ -97,13 +109,94 @@
 .generic-button:hover .generic-button-span{
     width: 100%;
 }
-.generic-button:hover{
-    border: none;
+.generic-button:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #009688;
+  z-index: -1;
+  transition: all 0.3s ease-out;
 }
+
+.generic-button:hover:before {
+  width: 100%;
+  left: 0;
+}
+.user-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px #888;
+  border-radius: 5px;
+}
+
+.user-form h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #009688;
+}
+
+.user-form p {
+  margin-bottom: 15px;
+}
+
+.user-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.user-form input[type="text"],
+.user-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+}
+
+.user-form input[type="text"]::placeholder,
+.user-form input[type="password"]::placeholder {
+  color: #aaa;
+}
+
+.user-form button {
+  margin-top: 20px;
+  background-color: #009688;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-form button:hover {
+  background-color: #008077;
+}
+
+
+@media only screen and (max-width: 768px) {
+  /* mobile styles */
+
+  .user-form {
+    max-width: none;
+    width: 90%;
+  }
+}
+
 
 @media only screen and (max-width: 768px) {
 	/* mobile styles */
-  
+
 	.navbar ul {
 	  position: fixed;
 	  top: 0;
@@ -118,20 +211,20 @@
 	  align-items: center;
 	  transition: all 0.3s ease-in;
 	}
-  
+
 	.navbar ul.show {
 	  left: 0;
 	}
-  
+
 	.navbar ul li {
 	  display: block;
 	  margin: 30px 0;
 	  line-height: 30px;
 	}
-  
+
 	.navbar ul li a {
 	  font-size: 20px;
 	  font-weight: bold;
 	}
-  
+
 }
