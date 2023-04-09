@@ -1,12 +1,9 @@
-from random import choice, randint
+import secrets
 from dhooks import Webhook
 from .db import Database
 from .ai_handler import AiHandler
 
 class Handler:
-
-
-
     def __init__(self):
         '''Initializes the Handler and the Database.'''
         self.default_user = {
@@ -19,12 +16,6 @@ class Handler:
         self.db = Database('db.json')
         self.ai = AiHandler(self)
     
-    def generate_key(self):
-        '''Generates a random key'''
-        chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-        key = ''
-        for i in range(randint(100, 200)): key += choice(chars)
-        return key
 
     def get(self, key):
         '''Get's a user's data using their key.'''
@@ -52,7 +43,7 @@ class Handler:
         if self.get_name(name) == None:
             user = self.default_user.copy()
 
-            user['key'] = self.generate_key()
+            user['key'] = secrets.token_hex()
             user['name'] = name
             user['password'] = password
 

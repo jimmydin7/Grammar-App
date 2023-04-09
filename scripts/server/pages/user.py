@@ -1,4 +1,5 @@
 from flask import render_template, request, make_response, redirect
+import secrets
 
 class User:
     def _check_proper_login(self, name, password):
@@ -36,7 +37,7 @@ class User:
                     error = 'Authentication failed! Wrong username or password.'
                 else:
                     # Generate a new key for next session
-                    key = self.handler.generate_key()
+                    key = secrets.token_hex()
                     auth['key'] = key
                     self.handler.db.save()
 
