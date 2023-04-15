@@ -1,5 +1,4 @@
 import secrets
-from dhooks import Webhook
 from .db import Database
 from .ai_handler import AiHandler
 
