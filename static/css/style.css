@@ -1,1 +1,269 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
 
+#error-def {
+    color: #FF0000;
+
+}
+
+.error-button {
+    background-color: white;
+    color: red;
+    font-size:1.2em;
+    cursor:pointer;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url("/static/images/temp-bg.png");
+    background-size: cover;
+    background-position: center;
+}
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    width: 120px;
+    cursor: pointer;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+.navbar ul li{
+    color: #fff;
+    text-transform: uppercase;
+}
+.navbar ul li a::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.navbar ul li a:hover::after{
+    width:100%;
+}
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+.content h1{
+    font-size: 70px;
+    margin-top: 80px;
+}
+.content p{
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+.generic-button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.generic-button-span{
+    background: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+.generic-button:hover .generic-button-span{
+    width: 100%;
+}
+.generic-button:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #009688;
+  z-index: -1;
+  transition: all 0.3s ease-out;
+}
+
+.generic-button:hover:before {
+  width: 100%;
+  left: 0;
+}
+.user-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px #888;
+  border-radius: 5px;
+}
+
+.user-form h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #009688;
+}
+
+.user-form p {
+  margin-bottom: 15px;
+}
+
+.user-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.user-form input[type="text"],
+.user-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+}
+
+.user-form input[type="text"]::placeholder,
+.user-form input[type="password"]::placeholder {
+  color: #aaa;
+}
+
+.user-form button {
+  margin-top: 20px;
+  background-color: #009688;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-form button:hover {
+  background-color: #008077;
+}
+
+
+/* Grammar */
+
+.input-prompt{
+  color: #00bfff;
+  background-color: #444;
+  border: none;
+  padding: 20px;
+  font-size: 24px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  outline: none;
+  width: 500px;
+  height: 400px;
+  resize: none;
+  text-align: center;
+  line-height: 50px;
+}
+
+#title-placeholder {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  color: #00bfff;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    width: 95%;
+    padding: 15px 0;
+  }
+
+  .logo {
+    width: 80px;
+  }
+
+  .navbar ul li {
+    margin: 0 10px;
+  }
+
+  .content h1 {
+    font-size: 50px;
+    margin-top: 50px;
+  }
+
+  .content p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .generic-button {
+    width: 150px;
+    padding: 10px 0;
+    margin: 10px 5px;
+  }
+
+  .user-form {
+    padding: 20px;
+  }
+
+  .user-form h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .user-form label {
+    font-size: 14px;
+  }
+
+  .user-form input[type="text"],
+  .user-form input[type="password"] {
+    font-size: 14px;
+  }
+
+  .user-form button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
